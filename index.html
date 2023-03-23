@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+</head>
+
+<body>
+    <!-- first page configuration -->
+    <div id="calculator">
+        <h2>BMI Calculator</h2>
+        <p id="static-desc" class="font-desc">BMI can easily be calculated using your metric height and weight. Your
+            doctor can look at your BMI in addition to other factors to evaluate your overall health. BMI is only one
+            factor that helps to determine overall health. It should never be used on its own to assess health status.
+            <br>Let's go check your BMI !
+        </p>
+        <!-- main function of BMI calculator -->
+        <div class="card">
+            <form id="form-bmi" name="" class="form">
+                <div class="form-group-g">
+                    <strong>Gender</strong>
+                    <br>
+                    <input type="radio" name="gender" value="m" required="true">
+                    <label for="gender">Male</label>
+                    <input type="radio" name="gender" value="f" required="true">
+                    <label for="gender">Female</label>
+                </div>
+                <div class="form-group">
+                    <label for="weight">Weight (kg)</label>
+                    <div class="icon-input">
+                        <i class="fa-solid fa-pencil"></i>
+                        <input name="weight" type="number" style="flex-grow: 1;" required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <div class="icon-input">
+                        <i class="fa-solid fa-pencil"></i>
+                        <input name="age" type="number" step="0.1" style="flex-grow: 1;" required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="height">Height (cm)</label>
+                    <div class="icon-input">
+                        <i class="fa-solid fa-pencil"></i>
+                        <input name="height" type="number" style="flex-grow: 1;" required="true">
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button id="calculate" type="submit" class="button">Calculate BMI</button>
+                    <button id="reset" type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+        <!-- static footer about BMI calculator -->
+        <div class="footer">
+            <p class="font-big">Features</p>
+            <p class="font-desc">
+                1. Calculate your Body Mass Index (BMI)
+                <br>
+                2. Give comprehensive results
+                <br>
+                3. Meal program preparation
+            </p>
+            <p id="static-desc" class="font-desc">
+                Ranges of BMI vary based on factors such as region and age, and are sometimes further divided into
+                subcategories such as severely underweight or very severely obese. Being overweight or underweight can
+                have significant health effects, so while BMI is an imperfect measure of healthy body weight, it is a
+                useful indicator of whether any additional testing or action is required.
+            </p>
+        </div>
+    </div>
+    <!-- second page configuration -->
+    <div id="results">
+        <h2>
+            <strong>BMI Results</strong>
+        </h2>
+        <!-- form for BMI calculation results -->
+        <div class="card-1">
+            <form id="" name="" class="form-1">
+                <div class="form-group-1">
+                    <p id="bmi-category-1" class="font-big"></p>
+                    <p id="bmi-result" class="font-big"></p>
+                    <p id="bmi-category-2" class="font-desc"></p>
+                </div>
+                <div class="button-group">
+                    <button id="download" type="submit" class="button">Download BMI Results</button>
+                </div>
+            </form>
+        </div>
+        <!-- footer for explanation related to BMI results -->
+        <div class="footer">
+            <p id="bmi-category-3" class="font-desc"></p>
+            <p id="bmi-category-4" class="font-desc"></p>
+            <p id="static-desc" class="font-desc">If you are worry about your daily meal, you can consult to our
+                Nutritionist expert and register via online to grab the meal plan program now!</p>
+            <div class="button-group">
+                <button id="consultation" type="button" onclick=" window.open('http://google.com','_blank')"
+                    class="button">Contact Nutritionist via Apps</button>
+                <button id="registration" type="button" onclick=" window.open('http://google.com','_blank')"
+                    class="button">Online Registration</button>
+            </div>
+            <p id="static-desc" class="font-desc">BMI screens for weight categories that may lead to health problems,
+                but it does not diagnose the body fatness or health of an individual.</p>
+        </div>
+        <!-- additional form only for Obese category -->
+        <div id="obese-only" class="card-2">
+            <form id="obese-test" name="" class="form-1">
+                <div class="form-group-1">
+                    <p class="font-big">
+                        Some diseases caused by obesity
+                    </p>
+                    <p class="font-desc">
+                        Diabetes
+                        <br>
+                        Hypertension
+                        <br>
+                        Heart Diseases
+                        <br>
+                        Osteoarthritis
+                    </p>
+                </div>
+                <div class="button-group">
+                    <button id="consultation" type="button" onclick=" window.open('http://google.com','_blank')"
+                        class="button">Contact Doctor via Apps</button>
+                    <button id="registration" type="button" onclick=" window.open('http://google.com','_blank')"
+                        class="button">Online Registration</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br>
+    <!-- download playstore appstore section -->
+    <div id="download-me">
+        <p id="" class="font-big">Download BMI Calculator</p>
+        <a href="https://play.google.com/store/games?device=windows" target="_blank">
+            <img src="assets/images/playstore.png" alt="Play Store" class="playstore">
+        </a>
+        <a href="https://www.apple.com/id/app-store" target="_blank">
+            <img src="assets/images/appstore.png" alt="App Store" class="appstore">
+        </a>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
